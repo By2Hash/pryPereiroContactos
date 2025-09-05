@@ -1,10 +1,15 @@
 namespace pryPereiroContactos
 {
-    public partial class Form1 : Form
+    public partial class frmContactos : Form
     {
-        public Form1()
+        public frmContactos()
         {
             InitializeComponent();
+        }
+
+        private void txtNombre_TextChanged(object sender, EventArgs e)
+        {
+            this.Focus;
         }
     }
 }
