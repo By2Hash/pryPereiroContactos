@@ -28,8 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmContactos));
             panel1 = new Panel();
-            btnSalir = new Button();
+            btnLimpiar = new Button();
             txtNombre = new TextBox();
             btnCargar = new Button();
             mtbNumero = new MaskedTextBox();
@@ -44,7 +45,7 @@
             // panel1
             // 
             panel1.BackColor = SystemColors.ControlLight;
-            panel1.Controls.Add(btnSalir);
+            panel1.Controls.Add(btnLimpiar);
             panel1.Controls.Add(txtNombre);
             panel1.Controls.Add(btnCargar);
             panel1.Controls.Add(mtbNumero);
@@ -55,16 +56,16 @@
             panel1.Size = new Size(353, 207);
             panel1.TabIndex = 0;
             // 
-            // btnSalir
+            // btnLimpiar
             // 
-            btnSalir.Font = new Font("Segoe UI", 14F);
-            btnSalir.Location = new Point(23, 147);
-            btnSalir.Name = "btnSalir";
-            btnSalir.Size = new Size(100, 41);
-            btnSalir.TabIndex = 8;
-            btnSalir.Text = "Salir";
-            btnSalir.UseVisualStyleBackColor = true;
-            btnSalir.Click += button1_Click;
+            btnLimpiar.Font = new Font("Segoe UI", 14F);
+            btnLimpiar.Location = new Point(23, 147);
+            btnLimpiar.Name = "btnLimpiar";
+            btnLimpiar.Size = new Size(100, 41);
+            btnLimpiar.TabIndex = 8;
+            btnLimpiar.Text = "Limpiar";
+            btnLimpiar.UseVisualStyleBackColor = true;
+            btnLimpiar.Click += button1_Click;
             // 
             // txtNombre
             // 
@@ -131,22 +132,25 @@
             // 
             // ltbNombres
             // 
+            ltbNombres.BorderStyle = BorderStyle.FixedSingle;
             ltbNombres.FormattingEnabled = true;
             ltbNombres.ItemHeight = 15;
             ltbNombres.Items.AddRange(new object[] { "" });
             ltbNombres.Location = new Point(23, 15);
             ltbNombres.Name = "ltbNombres";
-            ltbNombres.Size = new Size(308, 184);
+            ltbNombres.Size = new Size(308, 182);
             ltbNombres.TabIndex = 0;
+            ltbNombres.SelectedIndexChanged += ltbNombres_SelectedIndexChanged;
             // 
             // frmContactos
             // 
+            AcceptButton = btnCargar;
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(375, 470);
-            ControlBox = false;
             Controls.Add(panel2);
             Controls.Add(panel1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "frmContactos";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Contactos";
@@ -166,6 +170,6 @@
         private Label lblContactos;
         private Panel panel2;
         private ListBox ltbNombres;
-        private Button btnSalir;
+        private Button btnLimpiar;
     }
 }
