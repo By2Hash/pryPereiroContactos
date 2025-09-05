@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            btnSalir = new Button();
             txtNombre = new TextBox();
             btnCargar = new Button();
             mtbNumero = new MaskedTextBox();
@@ -43,6 +44,7 @@
             // panel1
             // 
             panel1.BackColor = SystemColors.ControlLight;
+            panel1.Controls.Add(btnSalir);
             panel1.Controls.Add(txtNombre);
             panel1.Controls.Add(btnCargar);
             panel1.Controls.Add(mtbNumero);
@@ -52,6 +54,17 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(353, 207);
             panel1.TabIndex = 0;
+            // 
+            // btnSalir
+            // 
+            btnSalir.Font = new Font("Segoe UI", 14F);
+            btnSalir.Location = new Point(23, 147);
+            btnSalir.Name = "btnSalir";
+            btnSalir.Size = new Size(100, 41);
+            btnSalir.TabIndex = 8;
+            btnSalir.Text = "Salir";
+            btnSalir.UseVisualStyleBackColor = true;
+            btnSalir.Click += button1_Click;
             // 
             // txtNombre
             // 
@@ -65,23 +78,27 @@
             // 
             // btnCargar
             // 
+            btnCargar.Enabled = false;
             btnCargar.Font = new Font("Segoe UI", 14F);
-            btnCargar.Location = new Point(124, 153);
+            btnCargar.Location = new Point(234, 147);
             btnCargar.Name = "btnCargar";
-            btnCargar.Size = new Size(100, 38);
+            btnCargar.Size = new Size(97, 41);
             btnCargar.TabIndex = 6;
             btnCargar.Text = "Cargar";
             btnCargar.UseVisualStyleBackColor = true;
+            btnCargar.Click += btnCargar_Click;
             // 
             // mtbNumero
             // 
             mtbNumero.BackColor = SystemColors.Window;
+            mtbNumero.Enabled = false;
             mtbNumero.ForeColor = SystemColors.Desktop;
-            mtbNumero.Location = new Point(260, 94);
+            mtbNumero.Location = new Point(253, 94);
             mtbNumero.Mask = "000-000-0000";
             mtbNumero.Name = "mtbNumero";
-            mtbNumero.Size = new Size(71, 23);
+            mtbNumero.Size = new Size(78, 23);
             mtbNumero.TabIndex = 5;
+            mtbNumero.MaskInputRejected += mtbNumero_MaskInputRejected;
             // 
             // lblTelefono
             // 
@@ -127,6 +144,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(375, 470);
+            ControlBox = false;
             Controls.Add(panel2);
             Controls.Add(panel1);
             Name = "frmContactos";
@@ -148,5 +166,6 @@
         private Label lblContactos;
         private Panel panel2;
         private ListBox ltbNombres;
+        private Button btnSalir;
     }
 }
